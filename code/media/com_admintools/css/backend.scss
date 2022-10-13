@@ -1,0 +1,26 @@
+/*!
+ * @package   admintools
+ * @copyright Copyright (c)2010-2022 Nicholas K. Dionysopoulos / Akeeba Ltd
+ * @license   GNU General Public License version 3, or later
+ */
+
+//@import 'sources/variables';
+
+// Component icon
+@import 'sources/title_icon.scss';
+
+// PHP File Change Scanner
+//@import 'sources/scanner';
+
+.external-link-no-before::before {
+  content: none !important;
+}
+
+/**
+ * Dark Mode
+ *
+ * This applies the color modifications to both forced dark mode and automatic dark mode
+ */
+//@media (prefers-color-scheme: dark) {
+//  @import 'sources/dark';
+//}

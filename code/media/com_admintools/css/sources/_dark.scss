@@ -1,0 +1,54 @@
+/*
+ * @package   admintools
+ * @copyright Copyright (c)2010-2022 Nicholas K. Dionysopoulos / Akeeba Ltd
+ * @license   GNU General Public License version 3, or later
+ */
+@use "sass:color";
+
+// PHP File Change Scanner
+.admintools-files-alert {
+  color: color.scale($red, $lightness: 10%);
+  text-shadow: 0 0 3px $black;
+}
+
+.admintools-files-noalert {
+  color: color.scale($light-grey, $lightness: -10%);
+  text-shadow: 0 0 3px $black;
+}
+
+form .admintools-scanfile-new {
+  text-shadow: 0 0 3px $black;
+}
+
+form .admintools-scanfile-modified {
+  text-shadow: 0 0 3px $black;
+}
+
+form .admintools-scanfile-suspicious {
+  color: color.scale($red, $lightness: 10%);
+  text-shadow: 0 0 3px $black;
+}
+
+form .admintools-scanfile-nothreat {
+  text-shadow: 0 0 3px $black;
+}
+
+form .admintools-scanfile-threat-none {
+  text-shadow: 0 0 3px $black;
+}
+
+form .admintools-scanfile-threat-low {
+  text-shadow: 0 0 3px $black;
+}
+
+form .admintools-scanfile-threat-medium {
+  text-shadow: 0 0 3px $black;
+}
+
+form .admintools-scanfile-threat-high {
+  text-shadow: 0 0 3px $black;
+}
+
+form span.admintools-scanfile-markedsafe {
+  text-shadow: 0 0 3px $black;
+}

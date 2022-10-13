@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<form>
+	<fields name="params">
+		<fieldset name="task_params">
+			<field name="deleteinactive"
+				   type="list"
+				   default="0"
+				   label="PLG_TASK_ADMINTOOLS_TASK_DELETEINACTIVEUSERS_TYPE"
+				   description="PLG_TASK_ADMINTOOLS_TASK_DELETEINACTIVEUSERS_TYPE_DESC"
+			>
+				<option value="1">PLG_TASK_ADMINTOOLS_TASK_DELETEINACTIVEUSERS_BLOCKED</option>
+				<option value="2">PLG_TASK_ADMINTOOLS_TASK_DELETEINACTIVEUSERS_NOTACTIVATED</option>
+				<option value="3">PLG_TASK_ADMINTOOLS_TASK_DELETEINACTIVEUSERS_BOTH</option>
+			</field>
+
+			<field name="deleteinactive_days"
+				   type="number"
+				   default="7"
+				   label="PLG_TASK_ADMINTOOLS_TASK_DELETEINACTIVEUSERS_DAYS"
+				   description="PLG_TASK_ADMINTOOLS_TASK_DELETEINACTIVEUSERS_DAYS_DESC"
+				   min="1"
+				   max="730"
+			/>
+		</fieldset>
+	</fields>
+</form>
