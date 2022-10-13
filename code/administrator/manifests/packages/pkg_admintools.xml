@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--~
+  ~ @package   admintools
+  ~ @copyright Copyright (c)2010-2022 Nicholas K. Dionysopoulos / Akeeba Ltd
+  ~ @license   GNU General Public License version 3, or later
+  -->
+
+<extension version="3.9.0" type="package" method="upgrade">
+    <dlid prefix="dlid=" suffix=""/>
+    <name>Admin Tools package</name>
+    <author>Nicholas K. Dionysopoulos</author>
+    <creationDate>2022-09-27</creationDate>
+    <packagename>admintools</packagename>
+    <version>7.1.11</version>
+    <url>https://www.akeeba.com</url>
+    <packager>Akeeba Ltd</packager>
+    <packagerurl>https://www.akeeba.com</packagerurl>
+    <copyright>Copyright (c)2010-2021 Akeeba Ltd / Nicholas K. Dionysopoulos</copyright>
+    <license>GNU GPL v3 or later</license>
+    <description>Admin Tools Professional installation package v.7.1.11</description>
+
+    <!-- List of extensions to install -->
+    <files>
+        <!-- Component -->
+        <file type="component" id="com_admintools">com_admintools-pro.zip</file>
+
+        <!-- Plugins: system -->
+        <file type="plugin" group="console" id="admintools">plg_console_admintools.zip</file>
+
+        <!-- Plugins: system -->
+        <file type="plugin" group="system" id="admintools">plg_system_admintools.zip</file>
+
+        <!-- Plugins: actionlog -->
+        <file type="plugin" group="actionlog" id="admintools">plg_actionlog_admintools.zip</file>
+
+        <!-- Plugins: task -->
+        <file type="plugin" group="task" id="admintools">plg_task_admintools.zip</file>
+    </files>
+
+    <!-- Installation script -->
+    <scriptfile>script.admintools.php</scriptfile>
+
+    <!-- Update servers -->
+    <updateservers>
+        <server type="extension" priority="1" name="Admin Tools Professional for Joomla!">https://cdn.akeeba.com/updates/pkgadmintoolspro.xml</server>
+    </updateservers>
+</extension>

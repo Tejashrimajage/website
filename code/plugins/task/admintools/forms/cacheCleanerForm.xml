@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<form>
+	<fields name="params">
+		<fieldset name="task_params">
+			<field name="cleantype"
+				   type="list"
+				   default="expire"
+				   label="PLG_TASK_ADMINTOOLS_TASK_CACHECLEANER_TYPE"
+				   description="PLG_TASK_ADMINTOOLS_TASK_CACHECLEANER_TYPE_DESC"
+			>
+				<option value="clean">PLG_TASK_ADMINTOOLS_TASK_CACHECLEANER_TYPE_CLEAN</option>
+				<option value="expire">PLG_TASK_ADMINTOOLS_TASK_CACHECLEANER_TYPE_EXPIRE</option>
+			</field>
+		</fieldset>
+	</fields>
+</form>

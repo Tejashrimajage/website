@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<form>
+	<fields name="params">
+		<fieldset name="task_params">
+			<field name="maxlogentries"
+				   type="number"
+				   default="1000"
+				   label="PLG_ADMINTOOLS_LBL_MAXLOGENTRIES"
+				   description="PLG_ADMINTOOLS_LBL_MAXLOGENTRIES_DESC"
+				   min="100"
+				   max="1000000"
+			/>
+		</fieldset>
+	</fields>
+</form>
