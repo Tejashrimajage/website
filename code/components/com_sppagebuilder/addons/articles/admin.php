@@ -8,6 +8,8 @@
 //no direct accees
 defined ('_JEXEC') or die ('resticted aceess');
 
+use Joomla\CMS\Language\Text;
+
 SpAddonsConfig::addonConfig(
 array(
 	'type'=>'content',
@@ -496,6 +498,35 @@ array(
 				),
 				'std'=>1,
 			),
+
+			'show_date_text' => array(
+				'type'    => 'text',
+				'title'   => Text::_('COM_SPPAGEBUILDER_ADDON_ARTICLES_SHOW_DATE_TEXT'),
+				'desc'    => Text::_('COM_SPPAGEBUILDER_ADDON_ARTICLES_SHOW_DATE_TEXT_DESC'),
+				'std'     => '',
+				'inline'  => true,
+				'depends' => array('show_date' => '1'),
+			),
+
+			'show_last_modified_date' => array(
+				'type'   => 'checkbox',
+				'title'  => Text::_('COM_SPPAGEBUILDER_ADDON_ARTICLES_SHOW_LAST_MODIFIED_DATE'),
+				'desc'   => Text::_('COM_SPPAGEBUILDER_ADDON_ARTICLES_SHOW_LAST_MODIFIED_DATE_DESC'),
+				'values' => array(
+					1 => Text::_('COM_SPPAGEBUILDER_YES'),
+					0 => Text::_('COM_SPPAGEBUILDER_NO'),
+				),
+				'std' 	 => 0,
+			),
+
+			'show_last_modified_date_text' => array(
+				'type'    => 'text',
+				'title'   => Text::_('COM_SPPAGEBUILDER_ADDON_ARTICLES_SHOW_LAST_MODIFIED_DATE_TEXT'),
+				'desc'    => Text::_('COM_SPPAGEBUILDER_ADDON_ARTICLES_SHOW_LAST_MODIFIED_DATE_TEXT_DESC'),
+				'std'     => '',
+				'inline'  => true,
+				'depends' => array('show_last_modified_date' => '1'),
+			),	
 
 			'show_readmore'=>array(
 				'type'=>'checkbox',

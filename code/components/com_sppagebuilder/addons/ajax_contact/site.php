@@ -1031,7 +1031,7 @@ class SppagebuilderAddonAjax_contact extends SppagebuilderAddons
                     #>
                     <div class="sppb-row">
                         <div class="sppb-col-sm-12 {{data.button_position}}">
-                            <button type="submit" id="btn-{{ data.id }}" class="sppb-btn {{classList}}">{{{iconLeft}}} {{ data.button_text }} {{{iconRight}}}</button>
+                            <button type="button" id="btn-{{ data.id }}" class="sppb-btn {{classList}}">{{{iconLeft}}} {{ data.button_text }} {{{iconRight}}}</button>
                         </div>
                     </div>
 				</form>

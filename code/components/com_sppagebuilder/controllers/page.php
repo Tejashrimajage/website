@@ -134,8 +134,7 @@ class SppagebuilderControllerPage extends FormController
 			$app->setUserState('com_sppagebuilder.edit.page.data', $data);
 
 			// Redirect back to the edit screen.
-			$url                = $link . Route::_('index.php?option=com_sppagebuilder&view=form&layout=edit&tmpl=component&id=' . $recordId . '&Itemid=' . $Itemid);
-			$output['redirect'] = $url;
+			$output['redirect'] = $link . 'index.php?option=com_sppagebuilder&view=form&layout=edit&tmpl=component&id=' . $recordId . '&Itemid=' . $Itemid;
 			echo json_encode($output);
 			die();
 		}
@@ -157,7 +156,7 @@ class SppagebuilderControllerPage extends FormController
 			// Redirect back to the edit screen.
 			$output['status']   = false;
 			$output['message']  = Text::sprintf('JLIB_APPLICATION_ERROR_SAVE_FAILED', $model->getError());
-			$output['redirect'] = $link . Route::_('index.php?option=com_sppagebuilder&view=form&layout=edit&tmpl=component&id=' . $recordId . '&Itemid=' . $Itemid);
+			$output['redirect'] = $link . 'index.php?option=com_sppagebuilder&view=form&layout=edit&tmpl=component&id=' . $recordId . '&Itemid=' . $Itemid;
 			echo json_encode($output);
 			die();
 		}
@@ -169,7 +168,7 @@ class SppagebuilderControllerPage extends FormController
             // Check-in failed, go back to the row and display a notice.
 			$output['status']   = false;
 			$output['message']  = Text::sprintf('JLIB_APPLICATION_ERROR_CHECKIN_FAILED', $model->getError());
-			$output['redirect'] = $link . Route::_('index.php?option=com_sppagebuilder&view=form&layout=edit&tmpl=component&id=' . $recordId . '&Itemid=' . $Itemid);
+			$output['redirect'] = $link . 'index.php?option=com_sppagebuilder&view=form&layout=edit&tmpl=component&id=' . $recordId . '&Itemid=' . $Itemid;
 			echo json_encode($output);
 			die();
 		}
@@ -202,7 +201,7 @@ class SppagebuilderControllerPage extends FormController
                 }
 
                 // Redirect back to the edit screen.
-                $output['redirect'] = $link . Route::_('index.php?option=com_sppagebuilder&view=form&layout=edit&tmpl=component&id=' . $recordId . '&Itemid=' . $Itemid);
+                $output['redirect'] = $link . 'index.php?option=com_sppagebuilder&view=form&layout=edit&tmpl=component&id=' . $recordId . '&Itemid=' . $Itemid;
                 // $output['redirect'] = '';
                 $output['id'] = $recordId;
 
@@ -214,7 +213,7 @@ class SppagebuilderControllerPage extends FormController
                 $app->setUserState('com_sppagebuilder.edit.page.data', null);
 
                 // Redirect to the list screen.
-                $output['redirect'] = $link . Route::_('index.php?option=' . $this->option . '&view=' . $this->view_list . $this->getRedirectToListAppend(), false);
+                $output['redirect'] = $link . 'index.php?option=' . $this->option . '&view=' . $this->view_list . $this->getRedirectToListAppend();
 
                 break;
         }
@@ -375,7 +374,7 @@ class SppagebuilderControllerPage extends FormController
 			$root               = Uri::base();
 			$root               = new Uri($root);
 			$link               = $root->getScheme() . '://' . $root->getHost();
-			$output['redirect'] = $link . Route::_('index.php?option=com_sppagebuilder&view=form&layout=edit&tmpl=component&id=' . $pageId . $menuItemId);
+			$output['redirect'] = $link . 'index.php?option=com_sppagebuilder&view=form&layout=edit&tmpl=component&id=' . $pageId . $menuItemId;
 		}
 		else
 		{
@@ -441,7 +440,7 @@ class SppagebuilderControllerPage extends FormController
 		$root     = Uri::base();
 		$root     = new Uri($root);
 		$link     = $root->getScheme() . '://' . $root->getHost();
-		$redirect = $link . Route::_('index.php?option=com_sppagebuilder&view=form&layout=edit&tmpl=component&id=' . $id);
+		$redirect = $link . 'index.php?option=com_sppagebuilder&view=form&layout=edit&tmpl=component&id=' . $id;
 
 		$output['status']   = true;
 		$output['message']  = Text::_('Page created successfully.');

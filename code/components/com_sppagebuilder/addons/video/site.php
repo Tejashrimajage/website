@@ -10,6 +10,7 @@
 defined ('_JEXEC') or die ('Restricted access');
 
 use Joomla\CMS\Uri\Uri;
+use Joomla\CMS\Language\Text;
 use Joomla\CMS\Component\ComponentHelper;
 
 class SppagebuilderAddonVideo extends SppagebuilderAddons {
@@ -22,8 +23,9 @@ class SppagebuilderAddonVideo extends SppagebuilderAddons {
 		$heading_selector = (isset($settings->heading_selector) && $settings->heading_selector) ? $settings->heading_selector : 'h3';
 
 		//Options
-		$url = (isset($settings->url) && $settings->url) ? $settings->url : '';
-		$no_cookie = (isset($settings->no_cookie) && $settings->no_cookie) ? $settings->no_cookie : 0;
+		$url 			= (isset($settings->url) && $settings->url) ? $settings->url : '';
+		$video_title 	= (isset($settings->video_title) && $settings->video_title) ? $settings->video_title : Text::_("COM_SPPAGEBUILDER_ADDON_VIDEO_TITLE_DEFAULT_TEXT");
+		$no_cookie 		= (isset($settings->no_cookie) && $settings->no_cookie) ? $settings->no_cookie : 0;
 		$show_rel_video = (isset($settings->show_rel_video) && $settings->show_rel_video) ? '&rel=0' : '&rel=1';
 
 		$mp4_enable = (isset($settings->mp4_enable) && $settings->mp4_enable) ? $settings->mp4_enable : 0;
@@ -93,7 +95,7 @@ class SppagebuilderAddonVideo extends SppagebuilderAddons {
 		$output .= ($title) ? '<'.$heading_selector.' class="sppb-addon-title">' . $title . '</'.$heading_selector.'>' : '';
 		if($mp4_enable != 1){
 			$output .= '<div class="sppb-video-block sppb-embed-responsive sppb-embed-responsive-16by9">';
-			$output .= '<iframe class="sppb-embed-responsive-item'.($placeholder ? ' sppb-element-lazy' : '').'" ' . ($placeholder ? 'style="background:url('.$placeholder.'); background-size: cover;"' : 'src="'.$src.'"') . ' '.($placeholder ? 'data-large="'.$src.'"' : '').' webkitAllowFullScreen mozallowfullscreen allowFullScreen loading="lazy"></iframe>';
+			$output .= '<iframe class="sppb-embed-responsive-item'.($placeholder ? ' sppb-element-lazy' : '').'" ' . ($placeholder ? 'style="background:url('.$placeholder.'); background-size: cover;"' : 'src="'.$src.'"') . ' '.($placeholder ? 'data-large="'.$src.'"' : '').' title="' . $video_title . '" webkitAllowFullScreen mozallowfullscreen allowFullScreen loading="lazy"></iframe>';
 			$output .= '</div>';
 		} else {
 			if($mp4_video_src || $ogv_video_src){
@@ -121,6 +123,7 @@ class SppagebuilderAddonVideo extends SppagebuilderAddons {
 
 			<#
 				let videoUrl = data.url || ""
+				let video_title = data.video_title ? data.video_title : Joomla.Text._("COM_SPPAGEBUILDER_ADDON_VIDEO_TITLE_DEFAULT_TEXT");
 				let show_rel_video = (typeof data.show_rel_video !== "undefined" && data.show_rel_video) ? "&rel=0" : "&rel=1";
 				let embedSrc = ""
 				let youtube_no_cookie = data.no_cookie ? "-nocookie" : ""
@@ -187,7 +190,7 @@ class SppagebuilderAddonVideo extends SppagebuilderAddons {
 					<div class="sppb-iframe-drag-overlay"></div>
 					<div class="sppb-video-block sppb-embed-responsive sppb-embed-responsive-16by9">
 						<# if(embedSrc){ #>
-						<iframe class="sppb-embed-responsive-item" src=\'{{ embedSrc }}\' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+						<iframe class="sppb-embed-responsive-item" src=\'{{ embedSrc }}\' title= \'{{ video_title }}\' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 						<# } #>
 					</div>
 				 <# } else {

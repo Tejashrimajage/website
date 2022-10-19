@@ -15,6 +15,7 @@ use Joomla\CMS\Router\Route;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Plugin\PluginHelper;
+use Joomla\CMS\Language\Multilanguage;
 use Joomla\CMS\Component\ComponentHelper;
 
 require_once JPATH_COMPONENT_ADMINISTRATOR . '/builder/classes/base.php';
@@ -170,6 +171,11 @@ if (!$this->item->text) {
 } else {
 	$doc->addScriptdeclaration('var initialState=' . $this->item->text . ';');
 }
+
+if (Multilanguage::isEnabled())
+{
+	list($langCode) = explode('-', $this->item->language);
+}
 ?>
 
 <div id="sp-page-builder" class="sp-pagebuilder <?php echo $menuClassPrefix; ?> page-<?php echo $this->item->id; ?>" data-pageid="<?php echo $this->item->id; ?>">
@@ -266,7 +272,7 @@ if (!$this->item->text) {
 			</div>
 		</div>
 	</div>
-	<iframe name="sp-pagebuilder-view" id="sp-pagebuilder-view" data-url="<?php echo Uri::root(); ?>index.php?option=com_sppagebuilder&view=form&id=<?php echo $this->item->id; ?>&layout=edit-iframe&Itemid=<?php echo $Itemid; ?>"></iframe>
+	<iframe name="sp-pagebuilder-view" id="sp-pagebuilder-view" data-url="<?php echo Uri::root(); ?>index.php?option=com_sppagebuilder&view=form&id=<?php echo $this->item->id; ?>&layout=edit-iframe&Itemid=<?php echo $Itemid;  echo Multilanguage::isEnabled() ? '&lang=' . $langCode : '';?>"></iframe>
 	<div id="sp-pagebuilder-page-tools" class="sp-pagebuilder-page-tools"></div>
 </div>
 

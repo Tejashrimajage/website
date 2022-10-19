@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @package SP Page Builder
  * @author JoomShaper http://www.joomshaper.com
@@ -7,6 +8,8 @@
 */
 //no direct accees
 defined ('_JEXEC') or die ('Restricted access');
+
+use Joomla\CMS\Language\Text;
 
 // Common
 JText::script('COM_SPPAGEBUILDER_FRONTEND_EDITOR');
@@ -98,3 +101,4 @@ JText::script('COM_SPPAGEBUILDER_SECONDS');
 JText::script('COM_SPPAGEBUILDER_ADDON_OPTIN_FORM_SUBCSCRIBE');
 JText::script('COM_SPPAGEBUILDER_ADDON_AJAX_CONTACT_NAME');
 JText::script('COM_SPPAGEBUILDER_ADDON_AJAX_CONTACT_EMAIL');
+Text::script("COM_SPPAGEBUILDER_ADDON_VIDEO_TITLE_DEFAULT_TEXT");

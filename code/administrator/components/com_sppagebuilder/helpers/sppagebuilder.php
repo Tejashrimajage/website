@@ -189,7 +189,7 @@ abstract class SppagebuilderHelper
 
 		$db = Factory::getDbo();
 		
-		if (self::checkPage($attribs['option'], $attribs['view'], $attribs['id']))
+		if (self::checkPage($attribs['option'], $attribs['view'], $attribs['id']) || $attribs['action'] == 'delete' || $attribs['action'] == 'stateChange')
 		{
 			if ($attribs['action'] == 'stateChange')
 			{
