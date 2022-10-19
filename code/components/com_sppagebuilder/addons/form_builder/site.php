@@ -677,8 +677,9 @@ class SppagebuilderAddonForm_builder extends SppagebuilderAddons
 			$sender_name = $from_name;
 		}
 
-		$cc  = !empty($cc) ? $cc : null;
-		$bcc = !empty($bcc) ? $bcc : null;
+		$cc  		 = !empty($cc) ? $cc : null;
+		$bcc 		 = !empty($bcc) ? $bcc : null;
+		$replyToMail = !empty($replyToMail) ? $replyToMail : null;
 
 		if (empty($sender_mail) && empty($sender_name))
 		{
@@ -1191,7 +1192,8 @@ class SppagebuilderAddonForm_builder extends SppagebuilderAddons
 					} // END:: has inner columns
 
 					// if repeatable addon (tab, accordion)
-					$inner_items = 'sp_' . $addon->name . '_item';
+					$addon_name  = ( isset($addon->name) && $addon->name ) ? $addon->name : '';
+					$inner_items = 'sp_' . $addon_name . '_item';
 
 					if (isset($addon->settings->$inner_items) && count($addon->settings->$inner_items) && $addon->settings->$inner_items)
 					{

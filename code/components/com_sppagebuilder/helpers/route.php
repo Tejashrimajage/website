@@ -24,6 +24,12 @@ abstract class SppagebuilderHelperRoute
 			return Uri::root() . $link;
 		}
 
+		// 4SEF
+		if (defined('4SEF_IS_RUNNING'))
+		{
+			return Uri::root() . $link;
+		}
+
 		return Route::link('site', $link, $xhtml = true, $ssl = null);
 	}
 

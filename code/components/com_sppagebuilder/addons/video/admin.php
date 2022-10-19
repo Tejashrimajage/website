@@ -1,4 +1,5 @@
 <?php
+
 /**
 * @package SP Page Builder
 * @author JoomShaper http://www.joomshaper.com
@@ -7,6 +8,8 @@
 */
 //no direct accees
 defined ('_JEXEC') or die ('Restricted access');
+
+use Joomla\CMS\Language\Text;
 
 SpAddonsConfig::addonConfig(
 	array(
@@ -142,6 +145,15 @@ SpAddonsConfig::addonConfig(
 						array('mp4_enable', '!=', 1)
 					)
 				),
+
+				'video_title' => [
+					'type'    => 'text',
+					'title'   => Text::_('COM_SPPAGEBUILDER_ADDON_VIDEO_TITLE'),
+					'desc'    => Text::_('COM_SPPAGEBUILDER_ADDON_VIDEO_TITLE_DESC'),
+					'std'     => '',
+					'depends' => [['mp4_enable', '=', 0]],
+				],
+				
 				'show_rel_video'=>array(
 					'type'=>'checkbox',
 					'title'=>JText::_('COM_SPPAGEBUILDER_ADDON_VIDEO_OWN_CHANNEL_REL'),

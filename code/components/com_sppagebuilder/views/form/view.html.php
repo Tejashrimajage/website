@@ -35,7 +35,7 @@ class SppagebuilderViewForm extends HtmlView
 			$joomlaLoginUrl = 'index.php?option=com_users&view=login&return=' . $return_url;
 
 			$app->enqueueMessage(Text::_('JERROR_ALERTNOAUTHOR'), 'error');
-			$app->redirect(Route::_($joomlaLoginUrl, false));
+			$app->redirect(Uri::base() . $joomlaLoginUrl, 403);
 			return false;
 		}
 
